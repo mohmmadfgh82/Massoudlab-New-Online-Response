@@ -1,391 +1,476 @@
-﻿*{
-
-margin:0;
-
-padding:0;
-
-box-sizing:border-box;
-
-font-family:'Vazirmatn',sans-serif;
-
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Vazirmatn', sans-serif;
 }
 
-
-body{
-
-height:100vh;
-
-overflow:hidden;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-background:
-
-linear-gradient(
-
-135deg,
-
-#0f2027,
-
-#203a43,
-
-#2c5364);
-
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg,#081B29,#0E2D3D,#13445B);
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
-
-.background{
-
-position:absolute;
-
-width:100%;
-
-height:100%;
-
-overflow:hidden;
-
+form {
+    width: 100%;
 }
 
-
-.blob{
-
-position:absolute;
-
-border-radius:50%;
-
-filter:blur(90px);
-
-opacity:.5;
-
-animation:move 12s infinite alternate;
-
+.page {
+    min-height: 100vh;
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    position: relative;
+    z-index: 2;
 }
 
+/* ---------- Glass Cards ---------- */
 
-.blob1{
+.card,
+.help-card {
 
-width:300px;
+    background: rgba(255,255,255,.08);
 
-height:300px;
+    backdrop-filter: blur(25px);
 
-background:#00c6ff;
+    -webkit-backdrop-filter: blur(25px);
 
-top:-100px;
+    border: 1px solid rgba(255,255,255,.08);
 
-left:-50px;
+    box-shadow:
 
+        0 25px 50px rgba(0,0,0,.35),
+
+        inset 0 1px 0 rgba(255,255,255,.08);
+
+    border-radius: 35px;
+
+    color: white;
 }
 
+.card {
 
-.blob2{
+    width: 430px;
 
-width:350px;
+    padding: 45px;
 
-height:350px;
-
-background:#0072ff;
-
-bottom:-120px;
-
-right:-50px;
-
-animation-duration:15s;
-
+    animation: fadeUp .7s ease;
 }
 
+.help-card {
 
-.card{
+    width: 320px;
 
-position:relative;
+    padding: 35px;
 
-width:420px;
-
-padding:40px;
-
-border-radius:30px;
-
-background:
-
-rgba(255,255,255,.12);
-
-backdrop-filter:blur(20px);
-
-box-shadow:
-
-0 25px 50px rgba(0,0,0,.35);
-
-animation:fadeUp .8s ease;
-
-text-align:center;
-
-color:white;
-
+    animation: fadeLeft .8s ease;
 }
 
+/* ---------- Background Lights ---------- */
 
-.logo{
+.circle {
 
-font-size:55px;
+    position: fixed;
 
-margin-bottom:10px;
+    border-radius: 50%;
 
-animation:pulse 2s infinite;
+    filter: blur(100px);
 
+    opacity: .25;
+
+    z-index: 0;
 }
 
+.c1 {
 
-h1{
+    width: 350px;
 
-font-size:32px;
+    height: 350px;
 
-font-weight:700;
+    background: #00C9A7;
 
+    top: -120px;
+
+    left: -120px;
 }
 
+.c2 {
 
-h3{
+    width: 400px;
 
-font-size:18px;
+    height: 400px;
 
-margin-bottom:30px;
+    background: #0F7CFF;
 
-color:#d7e7ff;
+    right: -150px;
 
-font-weight:300;
-
+    bottom: -150px;
 }
 
+/* ---------- Typography ---------- */
 
-.input{
-
-width:100%;
-
-padding:16px;
-
-border:none;
-
-outline:none;
-
-border-radius:15px;
-
-background:
-
-rgba(255,255,255,.18);
-
-color:white;
-
-font-size:16px;
-
-margin-bottom:20px;
-
-transition:.3s;
-
+.logo,
+.help-icon img {
+    width: clamp(80px, 69vw, 340px);
+    height: auto;
+    display: block;
+    margin-bottom: 40px;
+    background: linear-gradient(193deg, #00c9a7e0, #0f7cffcc);
+    border-radius: 35px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, .35), inset 0 1px 0 rgba(255, 255, 255, .08);
+    padding: 20px;
 }
 
+h1 {
 
-.input::placeholder{
+    text-align: center;
 
-color:#ddd;
+    font-size: 38px;
 
+    margin-bottom: 5px;
 }
 
+h2 {
 
-.input:focus{
+    text-align: center;
 
-transform:scale(1.03);
-
-box-shadow:
-
-0 0 20px
-
-rgba(0,198,255,.5);
-
+    margin-bottom: 25px;
 }
 
+h3 {
 
-.captcha{
+    text-align: center;
 
-display:flex;
+    color: #C7D5E0;
 
-gap:10px;
+    font-weight: 300;
 
-margin-bottom:25px;
-
-justify-content:center;
-
-align-items:center;
-
+    margin-bottom: 35px;
 }
 
+/* ---------- Inputs ---------- */
 
-.captcha img{
+.input {
 
-width:180px;
+    width: 100%;
 
-height:55px;
+    padding: 17px;
 
-border-radius:12px;
+    border: none;
 
-background:white;
+    outline: none;
 
+    border-radius: 18px;
+
+    background: rgba(255,255,255,.12);
+
+    color: white;
+
+    font-size: 16px;
+
+    margin-bottom: 18px;
+
+    transition: .3s;
 }
 
+.input::placeholder {
 
-.refresh{
-
-width:55px;
-
-height:55px;
-
-border:none;
-
-border-radius:12px;
-
-font-size:24px;
-
-cursor:pointer;
-
-background:
-
-linear-gradient(
-
-45deg,
-
-#00c6ff,
-
-#0072ff);
-
-color:white;
-
-transition:.3s;
-
+    color: rgba(255,255,255,.65);
 }
 
+.input:focus {
 
-.refresh:hover{
+    box-shadow:
 
-transform:rotate(180deg);
+        0 0 0 3px rgba(15,124,255,.15),
 
+        0 0 25px rgba(15,124,255,.4);
+
+    transform: translateY(-2px);
 }
 
+/* ---------- Captcha ---------- */
 
-.btn{
+.captcha-row {
 
-width:100%;
+    display: flex;
 
-padding:17px;
+    justify-content: center;
 
-border:none;
+    align-items: center;
 
-border-radius:15px;
+    gap: 12px;
 
-font-size:18px;
-
-font-weight:700;
-
-cursor:pointer;
-
-background:
-
-linear-gradient(
-
-45deg,
-
-#00c6ff,
-
-#0072ff);
-
-color:white;
-
-transition:.3s;
-
+    margin-bottom: 18px;
 }
 
+.captcha-image {
 
-.btn:hover{
+    width: 170px;
 
-transform:
+    height: 55px;
 
-translateY(-4px);
+    border-radius: 15px;
 
-box-shadow:
+    background: white;
 
-0 20px 40px
-
-rgba(0,114,255,.45);
-
+    overflow: hidden;
 }
 
+.refresh {
 
-.message{
+    width: 55px;
 
-display:block;
+    height: 55px;
 
-margin-top:20px;
+    border: none;
 
-font-size:15px;
+    border-radius: 15px;
 
-color:#ffd166;
+    background:
 
+    linear-gradient(
+
+    135deg,
+
+    #00C9A7,
+
+    #0F7CFF);
+
+    color: white;
+
+    font-size: 24px;
+
+    cursor: pointer;
+
+    transition: .35s;
 }
 
+.refresh:hover {
 
-@keyframes fadeUp{
+    transform:
 
-from{
+    rotate(180deg)
 
-opacity:0;
-
-transform:
-
-translateY(70px);
-
+    scale(1.05);
 }
 
-to{
+/* ---------- Buttons ---------- */
 
-opacity:1;
+.btn {
 
-transform:
+    width: 100%;
 
-translateY(0);
+    padding: 17px;
 
+    border: none;
+
+    border-radius: 18px;
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    #0F7CFF,
+
+    #00C9A7);
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: .3s;
 }
 
+.btn:hover {
+
+    transform:
+
+    translateY(-3px);
+
+    box-shadow:
+
+    0 15px 35px
+
+    rgba(15,124,255,.35);
 }
 
+.guide-btn {
 
-@keyframes pulse{
+    width: 100%;
 
-50%{
+    padding: 17px;
 
-transform:scale(1.1);
+    margin-top: 15px;
 
+    background: transparent;
+
+    border: 1px solid #00C9A7;
+
+    border-radius: 18px;
+
+    color: #00C9A7;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: .3s;
 }
 
+.guide-btn:hover {
+
+    background: #00C9A7;
+
+    color: white;
 }
 
+/* ---------- Help Card ---------- */
 
-@keyframes move{
+.hint {
 
-from{
+    padding: 18px;
 
-transform:
+    margin-top: 15px;
 
-translate(0,0);
+    border-radius: 18px;
 
+    background: rgba(255,255,255,.06);
+
+    transition: .3s;
 }
 
-to{
+.hint:hover {
 
-transform:
+    transform:
 
-translate(100px,80px);
+    translateY(-4px);
 
+    background:
+
+    rgba(255,255,255,.12);
 }
 
+.guide-link {
+
+    display: block;
+
+    text-align: center;
+
+    margin-top: 25px;
+
+    color: #55B5FF;
+
+    text-decoration: none;
+}
+
+.guide-link:hover {
+
+    color: white;
+}
+
+/* ---------- Message ---------- */
+
+.message {
+
+    display: block;
+
+    text-align: center;
+
+    margin-top: 20px;
+
+    color: #FFD166;
+
+    font-size: 15px;
+}
+
+/* ---------- Animations ---------- */
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+
+        translateY(50px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+
+        translateY(0);
+    }
+}
+
+@keyframes fadeLeft {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+
+        translateX(-50px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+
+        translateX(0);
+    }
+}
+
+@keyframes pulse {
+
+    50% {
+
+        transform: scale(1.08);
+    }
+}
+
+/* ---------- Responsive ---------- */
+
+@media(max-width:950px) {
+
+    .page {
+
+        flex-direction: column;
+
+        padding: 25px;
+
+        gap: 25px;
+    }
+
+    .card,
+    .help-card {
+
+        width: 100%;
+
+        max-width: 450px;
+    }
+
+    h1 {
+
+        font-size: 32px;
+    }
 }

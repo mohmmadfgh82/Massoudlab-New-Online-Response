@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Massoudlab_New_Online_Response {
-    
-    
-    public partial class Response {
-        
+namespace Massoudlab_New_Online_Response
+{
+
+
+    public partial class Response
+    {
+
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -20,7 +22,16 @@ namespace Massoudlab_New_Online_Response {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+
+        /// <summary>
+        /// imgLogo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgLogo;
+
         /// <summary>
         /// txtReception control.
         /// </summary>
@@ -29,7 +40,7 @@ namespace Massoudlab_New_Online_Response {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtReception;
-        
+
         /// <summary>
         /// txtUser control.
         /// </summary>
@@ -38,7 +49,7 @@ namespace Massoudlab_New_Online_Response {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtUser;
-        
+
         /// <summary>
         /// txtCaptcha control.
         /// </summary>
@@ -47,7 +58,7 @@ namespace Massoudlab_New_Online_Response {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCaptcha;
-        
+
         /// <summary>
         /// btnSearch control.
         /// </summary>
@@ -56,7 +67,16 @@ namespace Massoudlab_New_Online_Response {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSearch;
-        
+
+        /// <summary>
+        /// btnGuide control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGuide;
+
         /// <summary>
         /// lblMessage control.
         /// </summary>
