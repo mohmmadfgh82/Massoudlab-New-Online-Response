@@ -106,6 +106,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Images\1.png" />
     <Content Include="Images\Logo - FA2.png" />
     <Content Include="Response.aspx" />
     <Content Include="Scripts\bootstrap.js" />

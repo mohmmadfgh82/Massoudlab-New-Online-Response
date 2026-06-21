@@ -164,18 +164,28 @@ rel="stylesheet"/>
 
 
 
+        <div class="payment-area">
 
-        <asp:Button
+            <div id="paymentMessage" class="payment-message">
 
-        ID="btnGuide"
+                در حال آماده سازی این قسمت هستیم ...
 
-        runat="server"
+            </div>
 
-        Text="راهنمای جوابدهی آنلاین"
 
-        CssClass="guide-btn"
+            <asp:Button
 
-        OnClientClick="window.open('https://massoudlab.com/PageFa.aspx?l=1&Id=44'); return false;" />
+            ID="btnGuide"
+
+            runat="server"
+
+            Text="پرداخت بدهی"
+
+            CssClass="guide-btn payment-btn"
+
+            OnClientClick="showPaymentMessage(); return false;" />
+
+        </div>
 
 
 
@@ -212,23 +222,15 @@ rel="stylesheet"/>
         </h2>
 
 
-        <div class="hint">
+        <div class="receipt-guide-box">
 
-            📌 شماره پذیرش و شناسه کاربری روی رسید شما درج شده است.
+            <img
 
-        </div>
+            class="receipt-guide-image"
 
+            src="Images/1.png"
 
-        <div class="hint">
-
-            👤 شناسه کاربری توسط آزمایشگاه ارائه می‌شود.
-
-        </div>
-
-
-        <div class="hint">
-
-            ⏰ جواب‌ها معمولاً تا 24 ساعت آماده می‌شوند.
+            alt="راهنمای پیدا کردن شماره پذیرش و شناسه کاربری روی قبض آزمایشگاه"/>
 
         </div>
 
@@ -276,6 +278,39 @@ rel="stylesheet"/>
         document.getElementById("captchaImage").src =
 
             "Captcha.ashx?time=" + new Date().getTime();
+
+    }
+
+
+    var paymentMessageTimer;
+
+
+    function showPaymentMessage() {
+
+        var message = document.getElementById("paymentMessage");
+
+
+        if (!message) {
+
+            return false;
+
+        }
+
+
+        message.classList.add("show");
+
+
+        clearTimeout(paymentMessageTimer);
+
+
+        paymentMessageTimer = setTimeout(function () {
+
+            message.classList.remove("show");
+
+        }, 3000);
+
+
+        return false;
 
     }
 
